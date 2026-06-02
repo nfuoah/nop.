@@ -1,0 +1,983 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+#wrap {
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 26px;
+    font-weight: bolder;
+    color: #2A57F2;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    padding: 0 30px;
+    list-style: none;
+    text-decoration: none;
+    color: #2A57F2;
+}
+
+#wrap {
+    width: 100%;
+    height: 200vh;
+    background: linear-gradient(to bottom, #ffffff,#ffffff, #2A57F2, #2A57F2);
+
+}
+
+
+
+.home-title {
+    color: #2A57F2;
+    font-size: 170px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.home-subtitle {
+    display: flex;
+    justify-content: space-between;
+    color: #2A57F2;
+    font-size: 20px;
+    margin: 0 80px;
+
+}
+
+/*.icon {*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    margin: auto;*/
+/*    gap: 40px;*/
+/*}*/
+
+
+.home-phone {
+    width: 540px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    margin-top: -100px;
+}
+
+.home-earth {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: -480px;
+    position: relative;
+    z-index: 1;
+}
+
+/*영상 페이지*/
+
+.video-container {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-600px);
+    position: relative;
+    z-index: 3;
+}
+
+.video {
+    width: 80%;
+    height: 80vh;
+}
+
+/*통계페이지==============================================================*/
+
+/*서론 텍스트*/
+.chart-text01 {
+    width: 100%;
+    height: 100%;
+    padding: 460px 0;
+    background: #2A57F2;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 34px;
+}
+
+/*페이지 타이틀*/
+.page-title {
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+}
+
+.page-title p {
+    font-size: 16px;
+    color: #2A57F2;
+    font-weight: bold;
+}
+
+.page-title h2 {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.chart * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.chart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 360px;
+    margin-top: 100px;
+}
+
+/* 타이틀 영역 */
+.chart-title h2 {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+
+/*막대그래프----------------------------------*/
+.graph01 {
+    display: flex;
+    gap: 60px;
+    align-items: center; /* 높낮이 정중앙 맞춤 */
+}
+
+/* 막대 그래프 박스 */
+.chart01-graph {
+    width: 800px;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; /* 아래 배열 정렬 */
+    background: #EFF6FF;
+    border-radius: 16px;
+}
+
+/*차트 막대기*/
+.chart01-23, .chart01-24, .chart01-25 {
+    position: relative;
+    width: 110px;
+    border-radius: 50px 50px 0 0;
+}
+
+/* 연도별로 막대기 길이 다르게, 25년 파란색으로 강조 */
+.chart01-23 { height: 35%; background: #BFDBFE; }
+.chart01-24 { height: 55%; background: #BFDBFE; }
+/*.chart01-25 { height: 80%; background: #2A57F2; }*/
+
+/* 25년만 0에서 시작, 생성됨 */
+.chart01-25 {
+    height: 0 !important;
+    background: #2A57F2;
+    transition: height 1s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+.chart01-25.animated { height: 80% !important; }
+
+/* 2025 숫자 생기는 애니메이션 */
+.chart01-25 span:first-child {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.chart01-25.animated span:first-child {
+    opacity: 1;
+    transition-delay: 1s;
+}
+
+
+/* absolute를 사용해 차트 막대기(부모) 내부에서 위치 조정 */
+.chart01-graph span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.chart01-graph span:first-child {
+    /*발생 건 숫자는 막대 위로 오도록*/
+    top: -40px; color: #2A57F2;
+    font-size: 24px;
+}
+
+.chart01-graph span:last-child {
+    /*연도는 막대 안 아래쪽에 배치*/
+    bottom: 15px; color: #fff;
+    font-size: 18px;
+}
+
+.chart01-text h3, .chart02-text h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2A57F2;
+    margin-bottom: 10px;
+}
+
+.chart01-text p, .chart02-text p {
+    font-size: 24px;
+}
+
+.chart02-text {
+    text-align: right;
+}
+
+
+
+/*!*원그래프------------------------------------------*!*/
+
+/* 좌측 텍스트와 우측 도넛 박스들을 가로로 나란히 배치 */
+.chart02 {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* 원 그래프 배경 박스 */
+.chart02-graph {
+    width: 800px;
+    height: 400px;
+    background: #EFF6FF;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+/* 도넛 그래프 막대기 ---------------------------------------- */
+.graph02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.graph02-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: #2A57F2;
+}
+
+/* 도넛 감싸는 박스 */
+
+.svg-donut {
+    position: relative; /* 안쪽 글자 배치를 위해 도넛 틀을 부모 관계로 설계 */
+    width: 250px;
+    height: 250px;
+}
+
+/* 처음에는 파란색 선이 안 보이도록 0으로 설정 */
+.donut-segment {
+    stroke-dasharray: 0 100; /*선을 점선으로 만드는 코드()*/
+    transition: stroke-dasharray 1.2s cubic-bezier(0.71, 0.17, 0.39, 1);
+}
+
+
+.donut-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.donut-info .percent { color: #2A57F2; font-size: 40px; font-weight: bold; }
+.donut-info .count { color: #777777; font-size: 22px; margin-top: 2px; }
+
+/*=================================================================통계 결론---------*/
+.chart-text02 {
+    text-align: center;
+    padding: 100px 0;
+    font-size: 34px;
+    line-height: 1.6;
+    margin-bottom: 360px;
+}
+
+/*배경 하이라이트*/
+.chart-text02 strong {
+    color: #2A57F2FF;
+}
+
+/* =============================================
+   기능 소개 스크롤 타임라인
+   기준 해상도: 1920 × 1080
+   슬라이드 3개 → height: 300vh
+   (슬라이드 추가 시 100vh씩 늘리기)
+============================================= */
+
+.scroll-section {
+    position: relative;
+    height: 300vh;
+}
+
+.sticky-panel {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* ── 슬라이드 공통 ── */
+.slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;          /* 수직 중앙 */
+    gap: 80px;
+    padding: 0 120px;             /* 1920 기준 좌우 여백 */
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ─────────────────────────
+   사이드 타임라인
+───────────────────────── */
+/*.timeline-fixed {*/
+/*    position: absolute;*/
+/*    left: 120px;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    width: 140px;*/
+/*    z-index: 5;*/
+/*    !* 세로 중앙선 *!*/
+/*    border-left: 2px solid #BFDBFE;*/
+/*    margin-left: 6px; !* 점(14px) 중앙에 선 맞춤 *!*/
+/*}*/
+
+/* ── 수정 코드 ── */
+.timeline-fixed {
+    position: absolute;
+    left: 126px;   /* 기존 120px + margin 6px 합산 */
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    z-index: 5;
+}
+
+/* border-left 대신 ::before로 그라디언트 선 생성 */
+.timeline-fixed::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+            to bottom,
+            transparent 0%,       /* 위 끝 투명 */
+            #BFDBFE     45%,      /* 서서히 나타남 */
+            #BFDBFE     75%,      /* 서서히 사라짐 */
+            transparent 100%      /* 아래 끝 투명 */
+    );
+}
+
+.tl-track {
+    position: relative;
+    height: 100%;
+}
+
+/* 각 라벨 아이템 — position:absolute로 top을 JS가 제어 */
+.tl-item {
+    position: absolute;
+    left: -7px; /* 선 기준 점 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: top 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+}
+
+/* 결제는 처음엔 숨김 */
+.tl-item.tl-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 점 */
+.tl-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.4s, box-shadow 0.4s, border-color 0.4s;
+}
+
+.tl-dot.outline {
+    border: 2px solid #BFDBFE;
+    background: #fff;
+}
+
+.tl-dot.filled {
+    background: #2A57F2;
+    border: 2px solid #2A57F2;
+}
+
+.tl-dot.active-ring {
+    background: #fff;
+    border: 2px solid #2A57F2;
+    box-shadow: 0 0 0 4px #BFDBFE;
+}
+
+.tl-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2A57F2;
+    white-space: nowrap;
+}
+
+.tl-label.dim {
+    color: #94A3B8;
+}
+
+/* ─────────────────────────
+   카드 영역
+───────────────────────── */
+.cards-area {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.img-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.img-card p {
+    font-size: 24px;
+    color: #2A57F2;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+}
+
+.img-card h3 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #111;
+    text-align: center;
+}
+
+.intro-icon {
+    width: 25%;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+}
+
+.intro-icons {
+    width: 45%;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+}
+
+/*service=======================*/
+
+.main-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.service-title {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 60px 30px;
+    text-align: center;
+}
+
+.service-title h2 {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.service-title p {
+    font-size: 16px;
+    color: #2A57F2;
+    font-weight: bold;
+}
+
+
+.main-onboarding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transform: translateX(30px);
+}
+
+.img-onboarding {
+    width: 66%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.img-home {
+    width: 84%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.main-home {
+    transform: translateX(-30px) translateY(60px);
+    position: relative;
+}
+
+.main-text01 {
+    position: absolute;
+    top: 18%;
+    left: 90%;
+    text-align: left;
+    white-space: nowrap;
+    background: linear-gradient(to right, rgba(42, 87, 242, 0.12), transparent);
+    padding: 20px 30px;
+}
+
+.main-text02 {
+    position: absolute;
+    top: 65%;
+    left: -64%;
+    text-align: right;
+    white-space: nowrap;
+    background: linear-gradient(to left, rgba(42, 87, 242, 0.12), transparent);
+    padding: 40px 30px;
+}
+
+.main-text03 {
+    position: absolute;
+    top: 99%;
+    left: 15%;
+    text-align: center;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, rgba(42, 87, 242, 0.12), transparent);
+    padding: 20px;
+}
+
+.main-img p {
+    font-size: 16px;
+    color: #2A57F2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+
+/*스캔=========================================*/
+.service-scan {
+    margin-top: 300px;
+}
+
+.scan-wrap {
+    width: 100%;
+    height: 1080px;
+    background-image: url("img/service-scan-bg.png");
+}
+.scan-before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scan-after {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    gap: 200px;
+    transform: translateX(140px);
+}
+
+.scan-img {
+    display: flex;
+    align-items: flex-start;
+}
+
+.scan-main {
+    /*width: 45%;*/
+    height: auto;
+    display: block;
+    margin: 5px;
+}
+
+.scan-sub {
+    /*width: 38%;*/
+    height: 100%;
+    display: block;
+    margin: 5px;
+    z-index: 3;
+}
+
+.scan-icon {
+    transform: translate(-200px, 460px);
+    z-index: 1;
+}
+
+.vertical-arrow {
+    position: relative;
+    width: 1px;
+    height: 900px;
+    background: linear-gradient(to bottom, #ffffff 20%, #2A57F2 100%, transparent 100%);
+    margin: 20px 7%;
+}
+
+/* 아래쪽 화살표 촉 삼각형 만들기 */
+.vertical-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;                /* 선 맨 밑바닥에 딱 붙이기 */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* CSS 삼각형 공식 */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #2A57F2;
+}
+
+.scan-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.scan-align p {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+
+.service-title img {
+    width: 10%;
+    display: block;
+    margin: 10px auto;
+}
+
+
+.service-title-white {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 60px 30px;
+    text-align: center;
+}
+
+.service-title-white h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.service-title-white p {
+    font-size: 16px;
+    color: #ECF4FF;
+    font-weight: bold;
+}
+
+/*.service-bg {*/
+/*    background-color: #deecff;*/
+/*}*/
+
+
+
+.map-wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.map-left {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: right;
+    justify-content: center;
+    gap: 16vw;
+    transform: translateY(3.6vw);
+}
+
+.map-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    justify-content: center;
+    gap: 13.3vw;
+    transform: translateY(0.8vw);
+}
+
+.map-line {
+    width: 2.7vw;
+    height: 56vw;
+}
+
+.icon-text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 200px;
+
+}
+
+.search-img {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.search-left {
+    position: absolute;
+    left: 16%;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 210px;
+    text-align: right;
+    transform: translateY(-4%);
+}
+.search-right {
+    position: absolute;
+    left: 52%;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 210px;
+    text-align: right;
+    transform: translateY(-4%);
+}
+
+.pay-wrap {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 200px;
+}
+
+.pay-arrow {
+    position: relative;
+    width: 60px;                /* 화살표 선의 전체 가로 길이 (시안 맞춰 조절 가능) */
+    height: 2px;                /* 화살표 선의 두께 */
+    background-color: #2A57F2;  /* 네 메인 테마 블루 컬러 */
+    margin: 20px;               /* 주변 레이아웃과의 여백 */
+    display: inline-block;      /* 글자나 다른 요소들과 한 줄에 배치되도록 설정 */
+    vertical-align: middle;
+}
+
+.pay-arrow:after {
+    content: '';
+    position: absolute;
+    right: -4px;                /* 선 맨 오른쪽 끝에 찰떡같이 붙이기 */
+    top: 50%;
+    transform: translateY(-50%); /* 화살표 촉의 세로 정중앙 맞춤 */
+
+    /* CSS 삼각형 공식 (오른쪽을 향하는 삼각형) */
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;    /* 위쪽 날개 두께 */
+    border-bottom: 4px solid transparent; /* 아래쪽 날개 두께 */
+    border-left: 6px solid #2A57F2;
+}
+
+.pay-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pay-list p {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #2A57F2;
+}
+
+.pay-list img {
+    width: 80%;
+    height: auto;
+}
+
+.ment-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.ment-L {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+}
+
+.ment-R {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.line-wrap-L p {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #2A57F2;
+}
+
+.line-wrap-R p {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #2A57F2;
+}
+
+
+.line-wrap-L {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+}
+
+.line-wrap-L div {
+    position: relative;
+    width: 24px;                 /* 바깥쪽 연파란색 원 크기 */
+    height: 24px;
+    background-color: #DBEAFE;   /* 연한 블루 배경 (rgba(42, 87, 242, 0.15) 등 네 톤에 맞춰도 돼) */
+    border-radius: 50%;          /* 완벽한 원형 만들기 */
+    flex-shrink: 0;              /* 화면 줄어들 때 원 모양 찌그러짐 방지 */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-wrap-L div::before {
+    content: '';
+    width: 10px;                 /* 안쪽 작은 점 크기 */
+    height: 10px;
+    background-color: #2A57F2;   /* 네 메인 테마 블루 */
+    border-radius: 50%;
+}
+
+.line-wrap-L div::after {
+    content: '';
+    position: absolute;
+    right: 24px;                  /* 바깥쪽 원의 오른쪽 끝에서 선이 시작되도록 배치 */
+    top: 50%;
+    transform: translateY(-50%); /* 선의 세로 정중앙 맞춤 */
+
+    width: 150px;                /* 선의 전체 가로 길이 (시안 맞춰 늘리거나 줄여봐!) */
+    height: 2px;                 /* 선의 두께 */
+
+    background: linear-gradient(
+            to left,
+            #2A57F2 0%,
+            #2A57F2 30%,             /* 30% 지점까지는 진하게 유지되다가 */
+            transparent 100%         /* 끝으로 갈수록 흐려짐 */
+    );
+}
+
+.line-wrap-R {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+}
+
+.line-wrap-R div {
+    position: relative;
+    width: 24px;                 /* 바깥쪽 연파란색 원 크기 */
+    height: 24px;
+    background-color: #DBEAFE;   /* 연한 블루 배경 (rgba(42, 87, 242, 0.15) 등 네 톤에 맞춰도 돼) */
+    border-radius: 50%;          /* 완벽한 원형 만들기 */
+    flex-shrink: 0;              /* 화면 줄어들 때 원 모양 찌그러짐 방지 */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-wrap-R div::before {
+    content: '';
+    width: 10px;                 /* 안쪽 작은 점 크기 */
+    height: 10px;
+    background-color: #2A57F2;   /* 네 메인 테마 블루 */
+    border-radius: 50%;
+}
+
+.line-wrap-R div::after {
+    content: '';
+    position: absolute;
+    left: 24px;                  /* 바깥쪽 원의 오른쪽 끝에서 선이 시작되도록 배치 */
+    top: 50%;
+    transform: translateY(-50%); /* 선의 세로 정중앙 맞춤 */
+
+    width: 150px;                /* 선의 전체 가로 길이 (시안 맞춰 늘리거나 줄여봐!) */
+    height: 2px;                 /* 선의 두께 */
+
+    /* 가로 방향(to right)으로 진한 파란색에서 투명(transparent)으로 변하는 그라데이션 */
+    background: linear-gradient(
+            to right,
+            #2A57F2 0%,
+            #2A57F2 30%,             /* 30% 지점까지는 진하게 유지되다가 */
+            transparent 100%         /* 끝으로 갈수록 흐려짐 */
+    );
+}
