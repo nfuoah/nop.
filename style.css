@@ -317,7 +317,7 @@ body {
 .page-title {
     display: flex;
     flex-direction: column;
-    padding: 60px 5%;
+    padding: 60px 5% 10px;
 }
 
 .page-title p {
@@ -1005,9 +1005,9 @@ body {
 /* 중앙 휴대폰 박스 */
 .scan-phone-box {
     position: absolute;
-    top: 32%; left: 50%;
+    top: 26%; left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(300px, 24vw, 400px);
+    width: clamp(300px, 24vw, 320px);
     z-index: 10;
 }
 .phone-main-img { width: 100%; height: auto; display: block; }
