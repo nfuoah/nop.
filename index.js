@@ -173,3 +173,72 @@ if (document.querySelector('.chart02-graph')) {
     applyTlState(0);
 
 })();
+
+//스캔
+const scanData = {
+    sign: {
+        bg: "img/sign-bg.png",
+        main: "img/service-scan01.png",
+        loading: "img/service-scan01-1.png",
+        result: "img/service-scan01-2.png",
+        popup: "img/service-scan01-3.png"
+    },
+    receipt: {
+        bg: "img/receipt-bg.png",
+        main: "img/service-scan02.png",
+        loading: "img/service-scan02-1.png",
+        result: "img/service-scan02-2.png",
+        popup: "img/service-scan02-3.png" // 영수증용 팝업 이미지명 확인 필요!
+    }
+};
+
+// 🎯 2. 현재 어떤 모드인지 기억하는 변수 (기본값: 간판스캔)
+let currentMode = "sign";
+
+// 🖥️ 3. 제어할 HTML 이미지 태그들 가져오기 (js- 클래스로 콕 집음)
+const pageWrap = document.querySelector('.scan-page-wrap');
+const bgImg = document.querySelector('.js-scan-bg');
+const mainImg = document.querySelector('.js-phone-main');
+const loadingImg = document.querySelector('.js-phone-loading');
+const resultImg = document.querySelector('.js-phone-result');
+const popupImg = document.querySelector('.js-phone-popup');
+
+// 🎛️ 4. 상단 탭 버튼 클릭 이벤트 (담곰이의 change 이벤트와 같은 원리!)
+const tabButtons = document.querySelectorAll('.tab-btn');
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // 클릭한 버튼의 타입(sign 또는 receipt)을 알아내서 현재 모드 변경
+        currentMode = button.getAttribute('data-type');
+
+        bgImg.src = scanData[currentMode].bg;
+        mainImg.src = scanData[currentMode].main;
+        loadingImg.src = scanData[currentMode].loading;
+        resultImg.src = scanData[currentMode].result;
+        popupImg.src = scanData[currentMode].popup;
+
+        // 탭 바꿨으니 진행중이던 상태들은 깔끔하게 청소
+        pageWrap.classList.remove('is-scanning', 'is-done', 'show-popup');
+    });
+});
+
+// ⏳ 5. 스캔 시작 함수
+function startScan() {
+    pageWrap.classList.add('is-scanning');
+    setTimeout(() => {
+        pageWrap.classList.remove('is-scanning');
+        pageWrap.classList.add('is-done');
+    }, 1600);
+}
+
+// 🔍 6. 자세히 보기 함수
+function showDetail() {
+    pageWrap.classList.toggle('show-popup');
+}
+
+// // ↺ 7. 초기화 리셋 함수
+// function resetScan() {
+//     pageWrap.classList.remove('is-scanning', 'is-done', 'show-popup');
+// }
