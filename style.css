@@ -313,17 +313,17 @@ body {
 .page-title {
     display: flex;
     flex-direction: column;
-    padding: 60px 5% 10px;
+    padding: 80px 5% 10px;
 }
 
 .page-title p {
-    font-size: 16px;
+    font-size: 18px;
     color: #2A57F2;
     font-weight: bold;
 }
 
 .page-title h2 {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: bolder;
 }
 
@@ -339,7 +339,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: clamp(180px, 20vw, 360px);
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 0 5%;
 }
 
@@ -520,6 +520,15 @@ body {
     background: #fff;
 }
 
+.scroll-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #2A57F2;
+    padding: 100px 5% 10px;
+
+}
 
 .slide {
     position: absolute;
@@ -1502,7 +1511,7 @@ body {
 .report-main-phone {
     position: absolute;
     top: 40%;
-    left: 70%;
+    left: 74%;
     transform: translate(-50%, -50%);
     width: clamp(380px, 28vw, 480px);
     z-index: 10;
@@ -1544,6 +1553,10 @@ body {
     flex-shrink: 0;
 }
 
+.group-logo img {
+    width: 90%;
+}
+
 .group-icons {
     flex-shrink: 0;
 }
@@ -1564,6 +1577,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.icon-top-left img {
+    width: 96%;
+}
+
 
 /*무드보드=============================================*/
 
