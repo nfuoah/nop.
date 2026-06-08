@@ -244,6 +244,69 @@ body {
     }
 }
 
+.home-emoji {
+    position: absolute;
+    height: auto;
+    display: block;
+    pointer-events: none; /* 이모지가 마우스 틸트(data-tilt) 이벤트를 방해하지 않게 처리 */
+}
+
+.home-emoji.red {
+    top: 1%;
+    left: 28%;
+    width: clamp(35px, 3.5vw, 65px);
+    z-index: 1;
+
+    animation: floatRed 2.4s ease-in-out infinite;
+}
+
+.home-emoji.green {
+    top: 30%;
+    left: 23%;
+    width: clamp(35px, 3.5vw, 65px);
+    z-index: 1;
+
+    animation: floatGreen 2.4s ease-in-out infinite;
+}
+
+.home-emoji.yellow {
+    top: 14%;
+    right: 22%;
+    width: clamp(40px, 4vw, 75px);
+    z-index: 1;
+
+    /* 5.5초 주기로 좀 더 묵직하게 둥둥 */
+    animation: floatYellow 3.4s ease-in-out infinite;
+}
+
+
+@keyframes floatRed {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(-14deg);
+    }
+}
+
+@keyframes floatGreen {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(-16deg); /* 위로 들리면서 왼쪽으로 살짝 갸웃 */
+    }
+}
+
+@keyframes floatYellow {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-18px) rotate(10deg); /* 위로 들리면서 오른쪽으로 살짝 갸웃 */
+    }
+}
+
 /*영상 페이지==========================================*/
 
 .video-container {
