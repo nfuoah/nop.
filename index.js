@@ -309,3 +309,35 @@ if (sliderContainer) {
     sliderContainer.addEventListener('mouseenter', () => isPaused = true);
     sliderContainer.addEventListener('mouseleave', () => isPaused = false);
 }
+
+//============
+// 👁️ 스크롤 감시자 (Intersection Observer) 설정
+const observerOptions = {
+    root: null,       /* 브라우저 화면(뷰포트)을 기준으로 감시 */
+    rootMargin: '0px',
+    threshold: 0.30
+};
+
+const scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        // 해당 섹션이 화면에 들어왔다면!
+        if (entry.isIntersecting) {
+            // 섹션 내부에 있는 모든 fade-in-up 대상들을 찾아서 active 클래스를 붙여줌
+            const targets = entry.target.querySelectorAll('.fade-in-up');
+            targets.forEach(target => {
+                target.classList.add('active');
+            });
+
+            // 한 번 등장했으면 계속 감시할 필요 없으니 감시 해제 (원하면 주석 처리해도 돼!)
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// 🎯 감시할 큰 페이지(섹션)들 전부 지정하기
+// 네가 애니메이션을 먹인 큰 주머니 클래스명들을 여기에 적어주면 돼!
+const sections = document.querySelectorAll('section, .home, .video-container');
+
+sections.forEach(section => {
+    scrollObserver.observe(section);
+});

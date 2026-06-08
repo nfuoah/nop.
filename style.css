@@ -175,7 +175,7 @@ body {
 
 #wrap {
     width: 100%;
-    min-height: 200vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom, #ffffff, #ffffff, #2A57F2, #2A57F2);
 }
 
@@ -304,6 +304,27 @@ body {
     }
     50% {
         transform: translateY(-18px) rotate(10deg); /* 위로 들리면서 오른쪽으로 살짝 갸웃 */
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: none; /* 초기화 */
+}
+
+.fade-in-up.active {
+    animation: fadeInUp 1.2s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
