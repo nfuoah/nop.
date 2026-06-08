@@ -267,7 +267,8 @@ body {
 }
 
 .mac {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: auto;
     display: block;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
@@ -283,8 +284,8 @@ body {
     /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
     position: absolute;
     top: 8%;
-    left: 3%;
-    width: 94%;
+    left: 8%;
+    width: 84%;
     /* height: 90%; */
     object-fit: cover;
     border-radius: 4px;
@@ -551,7 +552,7 @@ body {
     background: linear-gradient(
             to bottom,
             transparent 0%,
-            #BFDBFE 20%,
+            #BFDBFE 40%,
             #BFDBFE 80%,
             transparent 100%
     );
@@ -1540,7 +1541,6 @@ body {
 }
 
 .group-logo {
-    width: 32%;
     flex-shrink: 0;
 }
 
