@@ -177,14 +177,14 @@ if (document.querySelector('.chart02-graph')) {
 //스캔
 const scanData = {
     sign: {
-        bg: "img/sign-bg.png",
+        // bg: "img/sign-bg.png",
         main: "img/service-scan01.png",
         loading: "img/service-scan01-1.png",
         result: "img/service-scan01-2.png",
         popup: "img/service-scan01-3.png"
     },
     receipt: {
-        bg: "img/receipt-bg.png",
+        // bg: "img/receipt-bg.png",
         main: "img/service-scan02.png",
         loading: "img/service-scan02-1.png",
         result: "img/service-scan02-2.png",
