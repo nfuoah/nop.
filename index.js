@@ -213,7 +213,7 @@ tabButtons.forEach(button => {
         // 클릭한 버튼의 타입(sign 또는 receipt)을 알아내서 현재 모드 변경
         currentMode = button.getAttribute('data-type');
 
-        bgImg.src = scanData[currentMode].bg;
+        /*bgImg.src = scanData[currentMode].bg;*/
         mainImg.src = scanData[currentMode].main;
         loadingImg.src = scanData[currentMode].loading;
         resultImg.src = scanData[currentMode].result;
