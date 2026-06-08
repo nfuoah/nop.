@@ -118,7 +118,7 @@ body {
 
 .nav-list {
     display: flex;
-    gap: 40px;       /* 메뉴 글자 사이 간격 */
+    gap: 40px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -157,9 +157,21 @@ body {
     transform-origin: left;
 }
 
-/* ==========================================================
-   메인 레이아웃 및 텍스트 영역 튜닝
-   ========================================================== */
+/*네비게이션 이동 화면 마진*/
+#video {
+    scroll-margin-top: 100px;
+}
+#planing {
+    scroll-margin-top: 80px;
+}
+#service {
+    scroll-margin-top: 30px;
+}
+#design {
+    scroll-margin-top: 80px;
+}
+
+/*메인페이지======================================================*/
 
 #wrap {
     width: 100%;
@@ -188,11 +200,10 @@ body {
     color: #2A57F2;
     font-size: clamp(14px, 1.2vw, 20px);
     margin: 0 5%;
+    font-weight: 600;
 }
 
-/* ==========================================================
-   핸드폰 & 지구 이미지 영역 튜닝
-   ========================================================== */
+/*휴대폰, 지구 이미지=================================*/
 
 .img {
     position: relative;
@@ -219,10 +230,8 @@ body {
     margin-top: -25%;
     position: relative;
     z-index: 1;
-
-    /* earth-rotate  / 40초 동안 / 일정한 속도로(linear) / 끊김 없이 무한히(infinite) */
+    /*지구 회전(무한)*/
     animation: earth-rotate 300s linear infinite;
-
     transform-origin: center center;
 }
 
@@ -235,10 +244,7 @@ body {
     }
 }
 
-
-/* ==========================================================
-   영상 페이지 영역 튜닝
-   ========================================================== */
+/*영상 페이지==========================================*/
 
 .video-container {
     /*box-sizing: border-box;*/
@@ -269,49 +275,38 @@ body {
 
 
 .main-video {
-    /*width: 80%;*/
-    /*max-width: 1200px;*/
-    /*height: auto;*/
-    /*aspect-ratio: 16 / 9;*/
-    /*border-radius: 16px;*/
-    /*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);*/
-
+    /* width: 80%; */
+    /* max-width: 1200px; */
+    /* height: auto; */
+    /* aspect-ratio: 16 / 9; */
+    /* border-radius: 16px; */
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
     position: absolute;
-    top: 6%;
-    left: 12.5%;
-    width: 75.4%;
-    height: 72.8%;
-
+    top: 8%;
+    left: 3%;
+    width: 94%;
+    /* height: 90%; */
     object-fit: cover;
     border-radius: 4px;
     box-shadow: none;
 }
-
-#video {
-    scroll-margin-top: 200px;
-}
-#planing {
-    scroll-margin-top: 80px;
-}
-#service {
-    scroll-margin-top: 30px;
-}
-#design {
-    scroll-margin-top: 80px;
-}
-
 
 /*통계페이지==============================================================*/
 
 
 .chart-text01 {
     width: 100%;
+    height: 100vh;
     padding: clamp(240px, 25vh, 460px) 5%;
     background: #2A57F2;
     color: #fff;
     text-align: center;
     line-height: 1.6;
     font-size: clamp(22px, 2vw, 34px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .page-title {
@@ -347,10 +342,7 @@ body {
     padding: 0 5%;
 }
 
-
-/* ==========================================================
-   막대그래프 (Chart 01) 애니메이션 & 비율 복구
-   ========================================================== */
+/*막대그래프======================================*/
 
 .graph01 {
     display: flex;
@@ -372,14 +364,12 @@ body {
     flex-shrink: 0;
 }
 
-/* 차트 막대기 두께 유연화 */
 .chart01-23, .chart01-24, .chart01-25 {
     position: relative;
     width: clamp(70px, 6vw, 110px);
     border-radius: 50px 50px 0 0;
 }
 
-/* 기존 애니메이션 속성 100% 원상복구 */
 .chart01-23 {
     height: 35%;
     background: linear-gradient(to top, #BFDBFE 10%, rgba(222, 236, 255, 10) 90%);
@@ -395,7 +385,6 @@ body {
 }
 .chart01-25.animated { height: 80% !important; }
 
-/* 2025 숫자 애니메이션 원상복구 */
 .chart01-25 span:first-child {
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -436,9 +425,7 @@ body {
 }
 
 
-/* ==========================================================
-   원그래프 (Chart 02) 영역 복구
-   ========================================================== */
+/*원그래프=====================================*/
 
 .chart02 {
     display: flex;
@@ -483,7 +470,6 @@ body {
     height: 250px;
 }
 
-/* 기존 도넛 애니메이션 속성 원상복구 */
 .donut-segment {
     stroke-dasharray: 0 100;
     transition: stroke-dasharray 1.2s cubic-bezier(0.71, 0.17, 0.39, 1);
@@ -505,10 +491,6 @@ body {
 .donut-info .count { color: #777777; font-size: 22px; margin-top: 2px; }
 
 
-/* ==========================================================
-   통계 결론 영역 튜닝
-   ========================================================== */
-
 .chart-text02 {
     text-align: center;
     padding: 100px 0;
@@ -520,9 +502,9 @@ body {
 .chart-text02 strong {
     color: #2A57F2FF;
 }
-/* =============================================
-   기능 소개 스크롤 타임라인 (최종 보정본)
-============================================= */
+
+
+/*기능 소개 =========================================================*/
 
 .scroll-section {
     position: relative;
@@ -537,7 +519,7 @@ body {
     background: #fff;
 }
 
-/* ── 슬라이드 공통 ── */
+
 .slide {
     position: absolute;
     inset: 0;
@@ -557,9 +539,7 @@ body {
     pointer-events: auto;
 }
 
-/* ─────────────────────────
-   사이드 타임라인
-───────────────────────── */
+/*오른쪽 선, 도형*/
 .timeline-fixed {
     position: absolute;
     left: clamp(60px, 6vw, 100px);
@@ -582,7 +562,7 @@ body {
     height: 100%;
 }
 
-/* 각 라벨 아이템 */
+
 .tl-item {
     position: absolute;
     left: -6px;
@@ -597,7 +577,6 @@ body {
     pointer-events: none;
 }
 
-/* 타임라인 점 디자인 */
 .tl-dot {
     width: 14px;
     height: 14px;
@@ -633,9 +612,7 @@ body {
     color: #94A3B8;
 }
 
-/* ─────────────────────────
-   카드 및 이미지 영역
-───────────────────────── */
+/*아이콘*/
 .cards-area {
     display: flex;
     gap: clamp(24px, 3vw, 48px);
@@ -681,8 +658,8 @@ body {
     display: block;
     transition: width 0.3s ease;
 }
-/*service=======================*/
 
+/*메인 페이지===============================================================================*/
 
 .service-main {
     width: 100%;
@@ -709,7 +686,6 @@ body {
     margin-top: 5px;
 }
 
-/* ── 메인 배치 프레임 ── */
 .main-container {
     display: flex;
     justify-content: center;
@@ -730,11 +706,10 @@ body {
     margin-bottom: 12px;
 }
 
-/* ── 📱 좌측 온보딩 화면 (뒤쪽 서브 레이어) ── */
+/*온보딩*/
 .main-onboarding {
     width: clamp(200px, 18vw, 260px);
     flex-shrink: 0;
-    /* 홈 화면 폰 왼쪽 가장자리 축에 자연스럽게 겹치도록 정돈 */
     position: relative;
     z-index: 1;
 }
@@ -745,13 +720,13 @@ body {
     display: block;
 }
 
-/* ── 📱 우측 홈 화면 (★기준점이 되는 주인공 박스) ── */
+/*홈화면*/
 .main-home {
-    width: clamp(280px, 24vw, 340px); /* 화면 폭 비례 부드러운 스케일링 */
+    width: clamp(280px, 24vw, 340px);
     flex-shrink: 0;
     position: relative;
-    z-index: 2; /* 온보딩 폰보다 확실하게 위로 올림 */
-    transform: translateY(100px); /* 온보딩보다 아래로 툭 떨어뜨리는 단차 형성 */
+    z-index: 2;
+    transform: translateY(100px);
 }
 
 .img-home {
@@ -761,11 +736,28 @@ body {
 }
 
 
-/* ─────────────────────────
-   🎯 이미지 각 영역 가장자리에서 뻗어나오는 텍스트 세팅
-───────────────────────── */
+/*설명텍스트*/
+.pos-text-home {
+    position: absolute;
+    top: 12%;
+    left: 96%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    white-space: nowrap;
+    background: linear-gradient(to right, rgba(42, 87, 242, 0.08), transparent);
+    padding: 16px 24px;
+    border-radius: 8px;
+}
 
-/* 글로벌 텍스트 폰트 초기화 */
+.pos-text-home img {
+    width: clamp(200px, 15vw, 280px);
+    height: auto;
+    display: block;
+}
+
+
 .pos-text-location h3, .pos-text-category h3, .pos-text-menubar h3 {
     font-size: clamp(18px, 1.3vw, 22px);
     color: #2A57F2;
@@ -779,23 +771,11 @@ body {
     line-height: 1.4;
 }
 
-/* 👉 우측: 위치 서비스 (홈 화면 상단 주소창 가장자리 밀착) */
-.pos-text-location {
-    position: absolute;
-    top: 22%;    /* 홍길동 님 주소창 컴포넌트 눈높이 세로축 */
-    left: 96%;   /* ⭕ 우측 액정 곡면 가장자리선에 아주 가깝게 밀착 출발 */
-    text-align: left;
-    white-space: nowrap;
-    background: linear-gradient(to right, rgba(42, 87, 242, 0.08), transparent);
-    padding: 16px 24px;
-    border-radius: 8px;
-}
 
-/* 👈 좌측: 기능 카테고리 (온보딩 폰을 완전히 건너뛰어 왼쪽 가장자리 밖으로 출격) */
+/* 기능 카테고리 */
 .pos-text-category {
     position: absolute;
-    top: 68%;    /* 적정가 검색 / 거스름돈 계산 컴포넌트 눈높이 세로축 */
-    /* ⭕ 핵심 보정: 홈 화면 왼쪽 테두리 기준으로 온보딩 폰 가로 두께만큼 확 밀어내서 온보딩 왼쪽에 배치 */
+    top: 68%;
     right: 100%;
     text-align: right;
     white-space: nowrap;
@@ -804,12 +784,12 @@ body {
     border-radius: 8px;
 }
 
-/* 👇 하단: 메뉴바 (홈 화면 파란색 하단 네비게이션바 정중앙 턱밑 밀착) */
+/* 메뉴바 */
 .pos-text-menubar {
     position: absolute;
-    top: 100%;   /* 파란 하단 메뉴바 액정 턱밑 세로축 */
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%); /* 정확히 홈 화면 폰 하단 정중앙 정렬 */
+    transform: translateX(-50%);
     text-align: center;
     white-space: nowrap;
     background: linear-gradient(to bottom, rgba(42, 87, 242, 0.08), transparent);
@@ -936,10 +916,7 @@ body {
 /*    margin-top: 100px;*/
 /*}*/
 
-
-/* =============================================
-   스캔 인터랙션 영역 전용 CSS
-============================================= */
+/*스캔===============================================================*/
 
 .service-bg-scan {
     width: 100%;
@@ -949,14 +926,22 @@ body {
     overflow: hidden;
 }
 
-/* 🎛️ 상단 탭 버튼 스타일 (구출 완료 버전) */
+
 .scan-tabs {
     display: flex;
     justify-content: center;
     gap: 16px;
     position: relative;
     z-index: 100;
-    margin-bottom: 30px;
+    margin-bottom: 2px;
+}
+
+.scan-subtext {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px auto;
 }
 
 .tab-btn {
@@ -991,7 +976,7 @@ body {
     width: 100%; height: 100%;
 }
 
-/*  배경 이미지 레이어 */
+
 .scan-bg-layer {
     position: absolute;
     top: 50%; left: 50%;
@@ -1002,7 +987,7 @@ body {
 }
 .scan-bg-layer img { width: 100%; height: auto; }
 
-/* 중앙 휴대폰 박스 */
+/* 중앙 휴대폰 */
 .scan-phone-box {
     position: absolute;
     top: 26%; left: 50%;
@@ -1018,8 +1003,8 @@ body {
     top: 71.5%;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: rgb(185 185 185 / 20%);
     border: 2px solid #ffffff;
@@ -1040,7 +1025,7 @@ body {
 }
 .scan-loading-layer img, .scan-result-layer img { width: 100%; height: auto; }
 
-/* 진행 상태 ON 클래스 */
+
 .scan-page-wrap.is-scanning .scan-loading-layer { opacity: 1; pointer-events: auto; }
 .scan-page-wrap.is-done .scan-result-layer { opacity: 1; pointer-events: auto; }
 .scan-page-wrap.is-scanning .btn-circle-trigger,
@@ -1065,42 +1050,12 @@ body {
     font-size: clamp(12px, 1vw, 14px);
 }
 
-/*!* ↺ [초기화 리셋 버튼] *!*/
-/*.btn-reset-trigger {*/
-/*    position: absolute;*/
-/*    top: 4%;*/
-/*    right: 6%;*/
-/*    width: 26px;*/
-/*    height: 26px;*/
-/*    background: #fff;*/
-/*    color: #2A57F2;*/
-/*    border: 1px solid #E2E8F0;*/
-/*    border-radius: 50%;*/
-/*    font-size: 13px;*/
-/*    font-weight: bold;*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    box-shadow: 0 2px 6px rgba(0,0,0,0.1);*/
-/*    z-index: 40;*/
-/*    opacity: 0;*/
-/*    pointer-events: none;*/
-/*    transition: all 0.3s ease;*/
-/*}*/
-/*.btn-reset-trigger:hover {*/
-/*    background: #2A57F2;*/
-/*    color: #fff;*/
-/*    border-color: #2A57F2;*/
-/*    transform: rotate(-45deg);*/
-/*}*/
-
 .scan-page-wrap.is-done .btn-reset-trigger { opacity: 1; pointer-events: auto; }
 
-/* 오른쪽 하단 상세정보 팝업 */
+/* 상세정보 팝업 */
 .scan-detail-popup {
     position: absolute;
-    top: 24%;
+    top: 16%;
     left: 58%;
 
     width: clamp(260px, 18vw, 340px);
@@ -1117,50 +1072,7 @@ body {
     pointer-events: auto;
 }
 
-
-/*.btn-reset-trigger {*/
-/*    position: absolute;*/
-/*    !* 🎯 폰 오른쪽 상단 액정 안쪽 즈음에 배치 (시안 보면서 수정해봐!) *!*/
-/*    top: 4%;*/
-/*    right: 6%;*/
-
-/*    width: 28px;*/
-/*    height: 28px;*/
-/*    background: #fff;*/
-/*    color: #2A57F2;*/
-/*    border: 1px solid #E2E8F0;*/
-/*    border-radius: 50%;*/
-/*    font-size: 14px;*/
-/*    font-weight: bold;*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    box-shadow: 0 2px 6px rgba(0,0,0,0.1);*/
-/*    z-index: 40; !* 최상단으로 올리기 *!*/
-
-/*    !* 기본 상태에서는 숨겨놓기 *!*/
-/*    opacity: 0;*/
-/*    pointer-events: none;*/
-/*    transition: all 0.3s ease;*/
-/*}*/
-
-/*.btn-reset-trigger:hover {*/
-/*    background: #2A57F2;*/
-/*    color: #fff;*/
-/*    border-color: #2A57F2;*/
-/*    transform: rotate(-45deg); !* 호버하면 살짝 회전하는 센스 효과 *!*/
-/*}*/
-
-/*!* ➡️ 자바스크립트로 스캔이 '완료(is-done)'되었을 때만 초기화 버튼 나타내기 *!*/
-/*.scan-page-wrap.is-done .btn-reset-trigger {*/
-/*    opacity: 1;*/
-/*    pointer-events: auto;*/
-/*}*/
-
-/* =============================================
-   안심/위험 상점 표시 지도 영역 (도형 가상요소 버젼)
-============================================= */
+/*지도 페이지 ===========================================*/
 
 .service-bg {
     width: 100%;
@@ -1169,7 +1081,6 @@ body {
     padding-bottom: 200px;
 }
 
-/* ── 5개의 열을 황금 비율로 배치하는 마법의 프레임 ── */
 .map-wrap {
     width: 100%;
     max-width: 1600px;
@@ -1181,7 +1092,6 @@ body {
     gap: clamp(20px, 3vw, 50px);
 }
 
-/* ── 📱 중앙 핸드폰 정렬 구역 ── */
 .map-center-phones {
     display: flex;
     justify-content: center;
@@ -1213,12 +1123,10 @@ body {
     display: block;
 }
 
-/* 시안처럼 오른쪽 '지도 결과' 폰만 아래로 단차 떨어트리기 */
 .drop-phone {
     transform: translateY(70px);
 }
 
-/* ── 텍스트 공통 스타일 노드 ── */
 .map-left, .map-right {
     display: flex;
     flex-direction: column;
@@ -1245,7 +1153,6 @@ body {
     line-height: 1.5;
 }
 
-/* ── 왼쪽 텍스트 정렬 및 세로 지시선 생성 ── */
 .map-left {
     text-align: right;
     gap: clamp(180px, 18vh, 260px);
@@ -1254,7 +1161,6 @@ body {
     border-right: 2px solid #BFDBFE;
 }
 
-/* 왼쪽 텍스트용 파란색 원 도형(동그라미 버튼) 생성 */
 .map-left .map-node::after {
     content: '';
     position: absolute;
@@ -1269,7 +1175,6 @@ body {
     z-index: 10;
 }
 
-/* ── 오른쪽 텍스트 정렬 및 세로 지시선 생성 ── */
 .map-right {
     text-align: left;
     gap: clamp(100px, 12vh, 160px);
@@ -1278,7 +1183,6 @@ body {
     border-left: 2px solid #BFDBFE;
 }
 
-/* 오른쪽 텍스트용 파란색 원 도형( */
 .map-right .map-node::before {
     content: '';
     position: absolute;
@@ -1293,7 +1197,6 @@ body {
     z-index: 10;
 }
 
-/* ── 안심/위험 미니 뱃지 커스텀 가이드 (좌측 하단) ── */
 .map-icon {
     display: flex;
     flex-direction: column;
@@ -1314,51 +1217,7 @@ body {
     font-weight: 600;
     padding-right: 4px;
 }
-
-/*검색*/
-
-/*.search-wrap {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    margin-bottom: 200px;*/
-
-/*}*/
-
-/*.search-img {*/
-/*    display: block;*/
-/*    width: 60%;*/
-/*    height: auto;*/
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.search-left {*/
-/*    position: absolute;*/
-/*    left: 16%;*/
-/*    top: 0;*/
-/*    height: 100%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    gap: 210px;*/
-/*    text-align: right;*/
-/*    transform: translateY(-4%);*/
-/*}*/
-/*.search-right {*/
-/*    position: absolute;*/
-/*    left: 52%;*/
-/*    top: 0;*/
-/*    height: 100%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    gap: 210px;*/
-/*    text-align: right;*/
-/*    transform: translateY(-4%);*/
-/*}*/
-/* =============================================
-   평균 시세 분석 영역 (이미지 2.5배 확대형)
-============================================= */
+/*검색================================================*/
 
 .search-wrap {
     width: 100%;
@@ -1370,7 +1229,6 @@ body {
     padding: 0 3%;
 }
 
-/* ── 📱 중앙 핸드폰 이미지 (기존 대비 2.5배 스케일 업) ── */
 .search-center-img {
     width: clamp(600px, 48vw, 800px);
     flex-shrink: 0;
@@ -1383,7 +1241,6 @@ body {
     display: block;
 }
 
-/* ── 텍스트 공통 스타일 노드 ── */
 .search-left, .search-right {
     display: flex;
     flex-direction: column;
@@ -1408,7 +1265,7 @@ body {
     white-space: nowrap;
 }
 
-/* ── 왼쪽 텍스트 및 가로 지시선 세팅 ── */
+
 .search-left {
     text-align: right;
     gap: clamp(180px, 10vh, 280px);
@@ -1421,7 +1278,7 @@ body {
     padding-bottom: 6px;
 }
 
-/* ── 오른쪽 텍스트 및 가로 지시선 세팅 ── */
+
 .search-right {
     text-align: left;
     gap: clamp(160px, 8vh, 260px);
@@ -1447,7 +1304,6 @@ body {
     padding: 0 4%;
 }
 
-/* ── 📱 개별 폰 세트 구역 ── */
 .pay-list {
     display: flex;
     flex-direction: column;
@@ -1465,19 +1321,17 @@ body {
     white-space: nowrap;
 }
 
-/* 이미지를 안전하게 감싸는 박스 */
 .pay-img-box {
     width: 100%;
     height: auto;
 }
 
 .pay-img-box img {
-    width: 100%; /* 부모 박스 안에서 꽉 차게 100%로 연동 */
+    width: 100%;
     height: auto;
     display: block;
 }
 
-/* ── ➡️ 폰 사이를 잇는 반응형 화살표 ── */
 .pay-arrow {
     position: relative;
     flex-grow: 1;
@@ -1488,7 +1342,6 @@ body {
     margin: 40px clamp(10px, 1.5vw, 30px) 0;
 }
 
-/* 화살표 오른쪽 촉(삼각형) */
 .pay-arrow::after {
     content: '';
     position: absolute;
@@ -1516,7 +1369,6 @@ body {
     display: block;
 }
 
-/* ── 텍스트 + 지시선 + 단추 공통 절대좌표 스타일 ── */
 .ment-node {
     position: absolute;
     height: 40px;
@@ -1533,13 +1385,11 @@ body {
     line-height: 1.4;
 }
 
-/* ──  좌측 텍스트 공통 속성 ── */
 .m-left {
     right: 100%;
     padding-right: 185px;
 }
 
-/* 좌측 그라데이션 선 */
 .m-left::before {
     content: '';
     position: absolute;
@@ -1551,7 +1401,6 @@ body {
     background: linear-gradient(to left, #2A57F2 0%, #2A57F2 30%, transparent 100%);
 }
 
-/* 좌측 동그라미 단추 */
 .m-left::after {
     content: '';
     position: absolute;
@@ -1565,13 +1414,11 @@ body {
     box-shadow: 0 0 0 7px #DBEAFE;
 }
 
-/* ── 우측 텍스트 공통 속성 ── */
 .m-right {
     left: 100%;
     padding-left: 185px;
 }
 
-/* 우측 그라데이션 선 */
 .m-right::before {
     content: '';
     position: absolute;
@@ -1583,7 +1430,6 @@ body {
     background: linear-gradient(to right, #2A57F2 0%, #2A57F2 30%, transparent 100%);
 }
 
-/* 우측 동그라미 단추 */
 .m-right::after {
     content: '';
     position: absolute;
@@ -1619,18 +1465,321 @@ body {
     top: 91.8%;
 }
 
+/*신고 페이지 =============================================*/
+
+.report-wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.report-bg-slider {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.25;
+    pointer-events: none;
+    top: 20%
+}
+
+.slider-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    will-change: transform;
+}
+
+.slider-track img {
+    height: clamp(380px, 32vh, 480px);
+    width: auto;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+
+
+.report-main-phone {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: clamp(380px, 28vw, 480px);
+    z-index: 10;
+}
+
+.report-main-phone video {
+    height: auto;
+    display: block;
+    border-radius: 64px;
+    filter: drop-shadow(0 30px 60px rgba(42, 87, 242, 0.25));
+    animation: floatingPhone 4s ease-in-out infinite;
+}
+
 
 /*디자인 페이지============================================*/
-.design-img01 {
+
+.design-wrap {
+    margin-bottom: 100px;
+}
+
+.system-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 30px;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.system-container h3 {
+    font-size: clamp(20px, 1.5vw, 24px);
+    color: #1E293B;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.group-logo {
+    width: 32%;
+    flex-shrink: 0;
+}
+
+.group-icons {
+    flex-shrink: 0;
+}
+
+.icon-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.icon-top {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.icon-top-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/*무드보드=============================================*/
+
+.identity-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px 0 40px;
+    box-sizing: border-box;
+}
+
+.moodboard-left {
+    width: 44%;
+    flex-shrink: 0;
+    margin-bottom: -5px;
+}
+
+.moodboard-left img {
+    width: 100%;
+    height: auto;
     display: block;
-    margin: auto;
 }
 
-.design-img02 {
-    width: 100%;
+.moodboard-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 140px;
 }
 
-.footer-img {
+.moodboard-traffic {
     width: 100%;
-    margin-top: 400px;
+    position: relative;
+}
+
+.moodboard-traffic img {
+    width: 140%;
+    height: auto;
+    display: block;
+
+    position: relative;
+    left: 7%;
+}
+
+.moodboard-right-middle .type-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.font-family-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.font-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* 글자 아래 기준선 맞춤 */
+    width: 100%;
+    position: relative;
+}
+
+.font-line::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px dashed #E2E8F0;
+    z-index: 1;
+}
+
+.sample-text, .weight-label {
+    position: relative;
+    z-index: 5;
+    background: #ffffff;
+}
+
+.sample-text {
+    font-size: 18px;
+    color: #111111;
+    padding-right: 8px;
+}
+
+.weight-label {
+    font-size: 13px;
+    color: #666666;
+    padding-left: 8px;
+}
+
+.regular .sample-text { font-weight: 400; }
+.medium .sample-text { font-weight: 500; }
+.semibold .sample-text { font-weight: 600; }
+.bold .sample-text { font-weight: 700; }
+
+.moodboard-right-bottom h3 {
+    margin-bottom: 12px;
+}
+
+.badge-group {
+    display: flex;
+    gap: 20px;
+}
+
+.keyword-badge {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #2A57F2;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(42, 87, 242, 0.15);
+}
+
+/*캐치프라이즈*/
+.nop-container {
+    position: relative;
+    width: 100%;
+    height: 140vh;
+    background-color: #2A57F2;
+    overflow: hidden;
+}
+
+.mockup-phone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(450px, 50vw, 800px);
+    height: auto;
+    z-index: 1;
+}
+
+.mockup-text {
+    position: absolute;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 56px);
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+    z-index: 2;
+}
+
+.txt-top {
+    top: 25%;
+    right: 15%;
+}
+
+.txt-bottom {
+    bottom: 25%;
+    left: 10%;
+}
+
+.nop-bg {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nop-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/*푸터*/
+
+.footer {
+    background-color: #2A57F2;
+    display: flex;
+    padding: 40px 80px;
+    justify-content: space-between;
+}
+
+.footer img {
+    width: 10%;
+    height: auto;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 60px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.footer-info p {
+    text-align: right;
+}
+
+.footer-contact {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-contact-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-contact img {
+    width: 100%;
 }

@@ -47,12 +47,12 @@
 
                 <div class="img">
                     <img src="img/mainphone.png" alt="phone" class="home-phone" data-tilt>
-                    <img src="img/mainearth.png" alt="earth" class="home-earth">
+                    <img src="img/mainearth-resize.png" alt="earth" class="home-earth">
                 </div>
             </div>
             <!--영상 페이지-->
             <div class="video-container" id="video">
-                <img src="img/Macbook.png" alt="mac" class="mac">
+                <img src="img/ipad.png" alt="mac" class="mac">
                 <video src="img/video.mp4" controls autoplay muted loop class="main-video"></video>
             </div>
         </div>
@@ -236,9 +236,12 @@
                         <img src="img/service-home.png" alt="home" class="img-home">
                     </div>
 
-                    <div class="pos-text-location">
-                        <h3>위치 서비스</h3>
-                        <p>사용자의 현재 위치를 확인 및 변경할 수 있어요</p>
+                    <div class="pos-text-home">
+                        <div class="pos-text-location">
+                            <h3>위치 서비스</h3>
+                            <p>내가 위치한 지역의 물가를 분석해서 알려줘요</p>
+                        </div>
+                        <img src="img/service-home-02.png" alt="location" class="pos-icon-location">
                     </div>
 
                     <div class="pos-text-category">
@@ -310,6 +313,8 @@
                 <h2>실시간 스캔</h2>
             </div>
 
+            <span class="scan-subtext">버튼을 눌러 스캔해보세요!</span>
+
             <div class="scan-tabs">
                 <button class="tab-btn active" data-type="sign">간판 스캔</button>
                 <button class="tab-btn" data-type="receipt">영수증 스캔</button>
@@ -318,12 +323,11 @@
             <div class="scan-container">
                 <div class="scan-page-wrap active">
                     <div class="scan-bg-layer">
-                        <img src="" alt="background" class="js-scan-bg">
+<!--                        <img src="" alt="background" class="js-scan-bg">-->
                     </div>
 
                     <div class="scan-phone-box">
 <!--                        <button class="btn-reset-trigger" onclick="resetScan()" title="초기화">↺</button>-->
-
                         <img src="img/service-scan01.png" alt="phone" class="phone-main-img js-phone-main">
 
                         <button class="btn-circle-trigger" onclick="startScan()"></button>
@@ -404,37 +408,6 @@
 
             </div>
         </section>
-
-        <!--시세 검색========================================-->
-<!--        <section class="service-bg">-->
-<!--            <div class="page-title">-->
-<!--                <p>이거 보통 얼마에 파는거야?</p>-->
-<!--                <h2>평균 시세 분석</h2>-->
-<!--            </div>-->
-<!--            <div class="search-wrap">-->
-<!--                <div class="ment-L">-->
-<!--                    <div class="line-wrap-L" style="transform: translateY(-68px);">-->
-<!--                        <p>상품 검색</p>-->
-<!--                        <div class="text-line"></div>-->
-<!--                    </div>-->
-<!--                    <div class="line-wrap-L" style="transform: translateY(168px);">-->
-<!--                        <p>관련 상품 추천</p>-->
-<!--                        <div class="text-line"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <img src="img/service-search.png" alt="ment">-->
-<!--                <div class="ment-R">-->
-<!--                    <div class="line-wrap-R" style="transform: translateX(-20px)">-->
-<!--                        <div class="text-line"></div>-->
-<!--                        <p>평균가 확인</p>-->
-<!--                    </div>-->
-<!--                    <div class="line-wrap-R" style="transform: translateX(-20px) translateY(200px);">-->
-<!--                        <div class="text-line"></div>-->
-<!--                        <p>주변 상점 추천</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
 
         <section class="service-bg">
             <div class="page-title">
@@ -535,21 +508,133 @@
             </div>
         </section>
 
+<!--        신고 페이지 ===============================================-->
+        <section class="report">
+            <div class="page-title">
+                <p>말이 안 통해도</p>
+                <h2>상황 맞춤 대응 멘트 추천</h2>
+            </div>
+
+            <div class="report-wrap">
+                <div class="report-bg-slider">
+                    <div class="slider-track js-report-track">
+                    </div>
+                </div>
+                <div class="report-main-phone">
+                    <video src="img/service-report-gif.mp4" autoplay loop muted class="js-report-video"></video>
+                </div>
+            </div>
+        </section>
+
+
     <!--    디자인-->
-        <header>
+        <header class="design-wrap" >
             <div class="page-title" id="design">
                 <p>디자인 콘셉트</p>
                 <h2>Design system</h2>
             </div>
-            <img src="img/design01.png" alt="design" class="design-img01">
-            <div class="page-title" style="margin-top: 200px; transform: translateY(200px);">
-                <h2>Brand color</h2>
+            <div class="system-container">
+                <div class="group-logo">
+                    <h3>Logo</h3>
+                    <img src="img/design-logo.png" alt="로고 시스템">
+                </div>
+
+                <div class="group-icons">
+                    <h3>Icon</h3>
+                    <div class="icon-group">
+                        <div class="icon-top">
+                            <img src="img/design-icon01.png" alt="안심 위험 뱃지" class="icon-top-left">
+                            <div class="icon-top-right">
+                                <img src="img/design-icon02.png" alt="신호등 아이콘">
+                                <img src="img/design-icon03.png" alt="글래스 아이콘">
+                            </div>
+                        </div>
+                        <img src="img/design-icon04.png" alt="라인 솔리드 아이콘" class="icon-bottom">
+                    </div>
+                </div>
             </div>
-            <img src="img/design02.png" alt="design" class="design-img02">
         </header>
+
+        <section class="moodboard">
+            <div class="identity-container">
+
+                <div class="moodboard-left">
+                    <img src="img/moodboard01.png" alt="컬러 칩 표지판">
+                </div>
+
+                <div class="moodboard-right">
+
+                    <div class="moodboard-traffic">
+                        <img src="img/moodboard02.png" alt="신호등 가이드">
+                    </div>
+
+                    <div class="moodboard-right-middle">
+                        <h3>Typography</h3>
+                        <div class="type-contents">
+                            <h4 class="font-family-title">프리텐다드</h4>
+
+                            <div class="font-line regular">
+                                <span class="sample-text">낯선 나라에서도 가격은 현지인처럼</span>
+                                <span class="weight-label">Regular</span>
+                            </div>
+                            <div class="font-line medium">
+                                <span class="sample-text">낯선 나라에서도 가격은 현지인처럼</span>
+                                <span class="weight-label">Medium</span>
+                            </div>
+                            <div class="font-line semibold">
+                                <span class="sample-text">낯선 나라에서도 가격은 현지인처럼</span>
+                                <span class="weight-label">SemiBold</span>
+                            </div>
+                            <div class="font-line bold">
+                                <span class="sample-text">낯선 나라에서도 가격은 현지인처럼</span>
+                                <span class="weight-label">Bold</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="moodboard-right-bottom">
+                        <h3>Design Keyword</h3>
+                        <div class="badge-group">
+                            <span class="keyword-badge">#정직</span>
+                            <span class="keyword-badge">#신뢰</span>
+                            <span class="keyword-badge">#안심</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     <!--  푸터  -->
         <header>
-            <img src="img/footer.png" alt="footer" class="footer-img">
+            <div class="nop-container">
+                <h2 class="mockup-text txt-top">낯선 나라에서도</h2>
+                <img src="img/mockup.png" alt="NOP 목업" class="mockup-phone">
+                <h2 class="mockup-text txt-bottom">가격은 현지인처럼</h2>
+            </div>
+        </header>
+
+        <div class="nop-bg">
+            <img src="img/nop-bg.png">
+        </div>
+
+        <header class="footer">
+            <img src="img/footer-logo.png" alt="footer-logo">
+            <div class="footer-info">
+                <div class="footer-contact">
+                    <div class="footer-contact-align">
+                        <img src="img/footer-01.png" alt="footer-01">
+                        <p>lyeonju1104@gmail.com</p>
+                    </div>
+                    <div class="footer-contact-align">
+                        <img src="img/footer-02.png" alt="footer-02">
+                        <p>oatrice100@gmail.com</p>
+                    </div>
+                    <div class="footer-contact-align">
+                        <img src="img/footer-03.png" alt="footer-03">
+                        <p>bms060321@naver.com</p>
+                    </div>
+                </div>
+                <p>© 2026 by 이백배 All rights reserved.</p>
+            </div>
         </header>
     </div>
 

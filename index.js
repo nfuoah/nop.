@@ -238,7 +238,72 @@ function showDetail() {
     pageWrap.classList.toggle('show-popup');
 }
 
-// // ↺ 7. 초기화 리셋 함수
-// function resetScan() {
-//     pageWrap.classList.remove('is-scanning', 'is-done', 'show-popup');
-// }
+// 신고 페이지 이미지 슬라이드
+
+// 슬라이드 할 이미지 배열
+const reportImages = [
+    "img/service-report01.png",
+    "img/service-report02.png",
+    "img/service-report03.png",
+    "img/service-report04.png",
+    "img/service-report05.png",
+    "img/service-report06.png",
+];
+
+// 무한 루프를 위해 오리지널과 복제본 생성()
+
+const reportTrack = document.querySelector('.js-report-track');
+
+// 🚀 1. 초기 이미지 배치 (여유롭게 화면을 채우기 위해 기본 6장을 일단 두 세트(12장)만 생성)
+const initialImages = [...reportImages, ...reportImages];
+if (reportTrack) {
+    reportTrack.innerHTML = initialImages.map((src, index) => {
+        const stepNum = (index % reportImages.length) + 1;
+        return `<img src="${src}" alt="step${stepNum}">`;
+    }).join('');
+}
+
+// 🕹️ 2. 픽셀 단위 무한 루프 애니메이션 제어 계측기
+let offset = 0;       // 현재 이동한 거리 (px)
+const speed = 1.2;    // 흘러가는 속도 (숫자가 커질수록 빨라짐, 디자이너 취향껏 조절!)
+let isPaused = false; // 마우스 오버 시 일시정지 체크용
+
+function moveSlider() {
+    if (!isPaused) {
+        offset += speed; // 매 프레임마다 speed 픽셀만큼 왼쪽으로 전진
+
+        // 🎯 3. 첫 번째 기차 칸(이미지 1장 + 간격)이 화면 왼쪽 밖으로 탈출했는지 감지
+        const firstChild = reportTrack.firstElementChild;
+        if (firstChild) {
+            // 첫 번째 이미지의 실제 가로폭 + CSS에 준 gap(40px) = 총 넘어가야 할 너비
+            const firstChildWidth = firstChild.getBoundingClientRect().width + 40;
+
+            // 만약 한 장 분량이 완전히 지나갔다면?
+            if (offset >= firstChildWidth) {
+                // 꼬리에 다음 이미지 생성해서 붙이기 구현:
+                // 맨 앞 자식 요소를 떼어다가 맨 뒤(Append)로 보내버림!
+                reportTrack.appendChild(firstChild);
+
+                // 떼어낸 만큼 좌표 축을 순간적으로 보정해서 툭 튀는 현상 방지
+                offset -= firstChildWidth;
+            }
+        }
+
+        // 하드웨어 가속 transform으로 부드럽게 밀어주기
+        reportTrack.style.transform = `translateX(${-offset}px)`;
+    }
+
+    // 브라우저의 다음 프레임에 맞춰 무한 반복 호출 (CPU 최적화)
+    requestAnimationFrame(moveSlider);
+}
+
+// 🚀 슬라이더 자동 출발
+requestAnimationFrame(moveSlider);
+
+
+// ⏸️ 4. 마이크로 인터랙션: 마우스 올리면 일시정지, 때면 다시 출발
+const sliderContainer = document.querySelector('.report-bg-slider');
+if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', () => isPaused = true);
+    sliderContainer.addEventListener('mouseleave', () => isPaused = false);
+}
