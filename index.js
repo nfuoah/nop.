@@ -192,10 +192,10 @@ const scanData = {
     }
 };
 
-// 🎯 2. 현재 어떤 모드인지 기억하는 변수 (기본값: 간판스캔)
+// 현재 어떤 모드인지 기억하는 변수 (기본값: 간판스캔)
 let currentMode = "sign";
 
-// 🖥️ 3. 제어할 HTML 이미지 태그들 가져오기 (js- 클래스로 콕 집음)
+// 제어할 HTML 이미지 태그들 가져오기 (js- 클래스로 콕 집음)
 const pageWrap = document.querySelector('.scan-page-wrap');
 const bgImg = document.querySelector('.js-scan-bg');
 const mainImg = document.querySelector('.js-phone-main');
@@ -203,7 +203,7 @@ const loadingImg = document.querySelector('.js-phone-loading');
 const resultImg = document.querySelector('.js-phone-result');
 const popupImg = document.querySelector('.js-phone-popup');
 
-// 🎛️ 4. 상단 탭 버튼 클릭 이벤트 (담곰이의 change 이벤트와 같은 원리!)
+// 🎛상단 탭 버튼 클릭 이벤트
 const tabButtons = document.querySelectorAll('.tab-btn');
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -224,7 +224,7 @@ tabButtons.forEach(button => {
     });
 });
 
-// ⏳ 5. 스캔 시작 함수
+// 스캔 시작 함수
 function startScan() {
     pageWrap.classList.add('is-scanning');
     setTimeout(() => {
@@ -233,12 +233,14 @@ function startScan() {
     }, 1600);
 }
 
-// 🔍 6. 자세히 보기 함수
+// 자세히 보기 함수
 function showDetail() {
     pageWrap.classList.toggle('show-popup');
 }
 
-// 신고 페이지 이미지 슬라이드
+
+
+// 신고 페이지 이미지 슬라이드==============================
 
 // 슬라이드 할 이미지 배열
 const reportImages = [
